@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>My Cart</title>
+    <style>
+      body {
+        background-color: #efefef;
+      }
+
+      .imgSection {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        margin-top: 1em;
+        padding: 0;
+      }
+      .cardBody {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+        font-size: large;
+        margin-top: 1em;
+      }
+      .card:hover {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+        border: 1px solid grey;
+        background-color: lightyellow;
+        font-weight: bold;
+      }
+
+      .quantity {
+        background-color: #efefef;
+        font-size: small;
+      }
+      .container-box {
+        margin-top: 2.5em;
+      }
+      .card2 {
+        position: fixed;
+        text-align: center;
+        top: 9%;
+        width: 30%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7);
+        background: linear-gradient(to top, aqua 40%, white 100%);
+      }
+      .myCardBody {
+        display: flex;
+        justify-content: space-between;
+      }
+      .cdn_btn {
+        all: unset;
+        background-color: yellow;
+        width: 100%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.7);
+      }
+      .cdn_btn:hover {
+        background-color: darkorange;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">Shopping Cart</h2>
+      <div class="row cart-items mt-2"></div>
+    </div>
+
+    <script>
+          let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let totalPrice=0;
+      let totalQuantity=0;
+          function displayCart() {
+              let cartContainer = document.querySelector(".cart-items");
+              cartContainer.innerHTML = "";
+
+              if (cart.length === 0) {
+                  cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+                  return;
+              }
+
+              cart.forEach(item => {
+                  let card = document.createElement("div");
+                  card.classList.add('col-lg-7','mb-2');
+
+                  card.innerHTML = `
+                  <div class="row card  p-2" style="height:250px">
+                      <div class="col-lg-3 card-body imgSection">
+                          <img src="${item.image}" style="object-fit:contain;height:110px" >
+                          <div class="container-box">
+                              <button class="btn quantity minus rounded-circle">-</button>
+                              <span class="">${item.quantity}</span>
+                              <button class="btn quantity plus rounded-circle">+</button>
+                              </div>
+                      </div>
+                           <div class="col-lg-7 ml-3 card-body cardBody p-1 " style="height:auto;">
+                                  <h5 class="card-title">${item.name}</h5>
+                                  <p class="card-text text-success font-weight-bold">$${item.price}</p>
+                                  <p class="card-text small">${item.description}</p>
+                                  <div class="remove">
+                                      <button class="btn removeItem btn-secondary" product-name="${item.name}" product-price="${item.price}" product-image="${item.image}" product-desc="${item.description}">Remove</button>
+                                      </div>
+                          </div>
+                  </div>
+
+                  `;cartContainer.appendChild(card);
+                  totalPrice=totalPrice+(item.price*item.quantity);
+                  totalQuantity=totalQuantity+(item.quantity)
+
+              });
+
+              // Total Price section
+                  let card2=document.createElement('div');
+                  card2.classList.add('offset-1','col-lg-4'),
+
+                  card2.innerHTML=`
+                 <div class=" card2">
+                  <div class="card-header bg-warning">Price Details</div>
+                  <div class="card-body myCardBody">
+                      <div class="left">
+                          <h6 class=card-text">Price:</h6>
+                     <h6 class="card-text">Total Items:</h6>
+                     <h6 class="card-text">Discount:</h6>
+                      <h5 class=card-text">Total Price:</h5>
+                          </div>
+                      <div class="right">
+                           <h6 class=card-text">$${totalPrice.toFixed(2)}</h6>
+                           <h6 class=card-text">${totalQuantity}</h6>
+                           <h6 class=card-text">$0</h6>
+                             <h5 class=card-text">$${totalPrice.toFixed(2)}</h5>
+                      </div>
+
+                  </div>
+                  <div class="card-footer">
+                      <button class="btn cdn_btn">Place Order</button>
+                      </div>
+                      <div class="p-2">
+
+                          </div>
+
+
+
+                  </div>
+                  `
+                  cartContainer.appendChild(card2)
+          }
+
+         window.addEventListener('load',function(){
+          displayCart();
+         })
+
+          document.querySelectorAll('.card').forEach(card => {
+          card.addEventListener('mouseover', function() {
+              let smallText = card.querySelector('.small'); // Find the `.small` inside the hovered card
+              if (smallText) {
+                  smallText.classList.add('font-weight-bold');
+              }
+          });
+
+          card.addEventListener('mouseout', function() {
+              let smallText = card.querySelector('.small');
+              if (smallText) {
+                  smallText.classList.remove('font-weight-bold');
+              }
+          });
+      });
+
+      // Removing entire item
+          document.addEventListener('click',function(e){
+              if(e.target.classList.contains('removeItem')){
+                  let button=e.target;
+          let productName=button.getAttribute('product-name')
+          let productPrice=button.getAttribute('product-price')
+          let productImage=button.getAttribute('product-image')
+          let productDesc=button.getAttribute('product-desc')
+
+            // Method to remove -M1 by creating new array in which that item is not there using filter
+            // let remainingItem=cart.filter(item=>item.name!==productName);
+
+            // localStorage.setItem('cart',JSON.stringify(remainingItem))
+
+            // Method-2 modifying same cart
+      let index=cart.findIndex(item=>item.name===productName);
+      if(index!==-1){
+          cart.splice(index,1)
+      }
+      alert("Item removed from cart! 🛒");
+      localStorage.setItem('cart',JSON.stringify(cart))
+          }
+          displayCart();
+      })
+      
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

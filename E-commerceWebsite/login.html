@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="login.css" />
+    <title>Sign In/Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main_block">
+        <input
+          type="radio"
+          name="commonName"
+          class="mysignin"
+          id="one"
+          checked
+        />
+        <label for="one">Sign In</label>
+        <input type="radio" name="commonName" class="mysignup" id="two" />
+        <label for="two">Sign Up</label>
+
+        <div class="main_common signIn">
+          <h3>Sign In</h3>
+          <div class="within_signin">
+            <input class="common1 user" type="text" required placeholder="Username" />
+            <input
+              class="common1 pw"
+              type="password"
+              required
+              placeholder="Password"
+            />
+            <button class="cdn_btn1">Sign In</button>
+          </div>
+          <div class="footer">
+            <span>Dont have an account?</span>
+            <button class="sign_up_here mysignup">Sign Up Here</button>
+          </div>
+        </div>
+
+        <div class="main_common signUp">
+          <h3>Sign Up</h3>
+          <div class="within_signup">
+            <input
+              class="common forUsername"
+              type="text"
+              required
+              placeholder="Username"
+            />
+            <input
+              class="common forPassword"
+              type="password"
+              required
+              placeholder="Password"
+            />
+            <input
+              class="common forEmail"
+              type="email"
+              required
+              placeholder="Email"
+            />
+            <button class="cdn_btn2">Sign Up</button>
+          </div>
+          <div class="footer">
+            <span>Already have an account?</span>
+            <button class="sign_in_here mysignin">Sign In Here</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let mysignup = document.querySelectorAll(".mysignup");
+      let mysignin = document.querySelectorAll(".mysignin");
+      let signIn = document.querySelector(".signIn");
+      let signUp = document.querySelector(".signUp");
+      let one=document.querySelector('#one')
+      let two=document.querySelector('#two')
+
+      function showSignUp() {
+        signIn.style.display = "none";
+        signUp.style.display = "block";
+        two.checked = true;
+        // document.querySelector('.main_block').style.marginLeft='53em'
+      }
+
+      function showSignIn() {
+        signIn.style.display = "block";
+        signUp.style.display = "none";
+        one.checked = true;
+        //  document.querySelector('.main_block').style.marginLeft='3em'
+      }
+
+      mysignup.forEach((item) => {
+        item.addEventListener("click", function (e) {
+          showSignUp();
+        });
+      });
+      mysignin.forEach((item) => {
+        item.addEventListener("click", function (e) {
+          showSignIn();
+        });
+      });
+
+      // Now taking input for signup
+      let userName = "";
+      let password = "";
+      let email = "";
+      let user=""
+      let pw=""
+      document.querySelectorAll(".common").forEach((item) => {
+        item.addEventListener("input", function () {
+          if (this.classList.contains("forUsername")) {
+          userName= this.value;
+          localStorage.setItem("userName",userName); 
+          } else if (this.classList.contains("forPassword")) {
+            password = this.value;
+            localStorage.setItem("password",password); 
+          } else {
+            email = this.value;
+            localStorage.setItem("email",email); 
+          }
+        });
+      });
+
+      document
+        .querySelector(".cdn_btn2")
+        .addEventListener("click", ()=> {
+          if (userName !== "" && password !== "" && email !== "") {
+            showSignIn();
+          }else{
+            alert("Enter credentials first")
+          }
+        });
+
+        // SIgn in 
+
+        document.querySelectorAll('.common1').forEach(item=>{
+          item.addEventListener('input',function(){
+            if(this.classList.contains('user')){
+              user=this.value;
+            }else{
+              pw=this.value
+            }
+           
+          })
+        })
+
+        document.querySelector('.cdn_btn1').addEventListener('click',()=>{
+          if(user!=="" && pw!==""){
+            if(user===localStorage.getItem("userName") && pw===localStorage.getItem("password")){
+              window.location.href="http://127.0.0.1:5500/Projects/Clone%20website/E_commerce.html"
+            }else{
+              alert("wrong credentials")
+            }
+          }
+        })
+        
+    </script>
+  </body>
+</html>
