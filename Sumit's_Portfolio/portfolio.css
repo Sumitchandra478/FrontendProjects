@@ -1,0 +1,211 @@
+.outerdiv {
+    background: url('/image/resume-mouse.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+    height: 301px; /* Ensure it fills the viewport */
+    padding-top: 10px; /* Avoid negative margins */
+    padding-bottom:40px;
+ }
+ 
+ .outerdiv::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(52, 73, 94, 0.7); /* Darker overlay */
+    z-index: 1; /* Keep it behind the content */
+ }
+ 
+ .container {
+    position: relative;
+    z-index: 2; /* Bring the content above the overlay */
+    color: white; /* Ensure text is readable */
+   
+   
+ }
+ 
+ 
+ .section{
+     padding:60px 0px;
+     
+ }
+ 
+ 
+ .section:nth-child(2n){
+     background: lightblue;
+ }
+ 
+ .nav{
+     /* border:5px solid black; */
+     margin-top:-70px;
+ }
+ 
+ .nav-link{
+     color:#fff;
+     font-size: 30px;
+     letter-spacing: 0.3rem;
+ }
+ 
+ .nav-link:hover{
+     color:#fff;
+     background: rgba(25, 37, 209, 0.3);
+     border-radius:20px 20px 20px 20px;
+ }
+ 
+ .name{
+     color:rgba(255,255,255,1);
+     font-size: 35px;
+     letter-spacing: 0.3rem;
+ }
+ 
+ .name1{
+     font-size:13px;
+ 
+ }
+ 
+ .social-icons li a i{
+    font-size: 20px;
+    color: #fff;
+    display: inline-block; /* Ensures transform & shadow work */
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    border-radius: 50%; /* Keeps it round */
+    
+ }
+ 
+ .social-icons li a i:hover { /* Removed extra space before :hover */
+    box-shadow: 0px 0px 5px 3px red;
+    transform: scale(1.5);
+ }
+ 
+ 
+  .my-photo{
+    background: url(/image/Cropped_myphoto1.jpg);
+    background-size: 90%;
+    background-position: center;
+    width:180px;
+    height:180px;
+   margin-top:-9.5rem;
+   box-shadow:0px 0px 5px 3px black;
+  
+ }
+ 
+  .heading{
+     font-size:35px;
+     color:#2857a4;
+     font-weight:bold;
+     letter-spacing: 0.2rem;
+ 
+  }
+ 
+  #Skills{
+     padding:130px 0px;
+     background: rgb(52, 73, 94,0.1);
+  }
+ 
+  .progress{
+     width:130px;
+     height:30px;
+     margin:20px;
+     border-radius:20px 20px 20px 20px;
+  }
+ .progress-bar p{
+     font-size:15px;
+     font-weight: bold;
+  }
+ 
+  .bottom-icons ul li a i{
+     color:#2857a4;
+  }
+ 
+  .e-name::before{
+     content:'';
+     background: url(/image/user.png);
+     height:30px;
+     width:30px;
+     background-size: contain;
+     position:absolute;
+ 
+  }
+ 
+  .e-email::before{
+     content:'';
+     background: url(/image/email.png);
+     height:30px;
+     width:30px;
+     background-size: contain;
+     position:absolute;
+ 
+  }
+ 
+  #Education{
+     background:rgb(234, 236, 239);
+  }
+ 
+  .section-divider:nth-child(2n){
+     position:relative;
+     left:65%;
+ 
+  }
+ 
+  .timeline{
+     position:relative;
+    
+  }
+ 
+  .divider{
+     height:95%;
+     width:0px;
+     border:3px dashed grey;
+     position:absolute;
+     top:2%;
+    /* margin:auto; here margin doesnt work as position is set */
+    left:50%;
+     
+  }
+  .left-divider{
+   height:93%;
+   width:0px;
+   border:3px dashed grey;
+   position: absolute;
+   left:-1em;
+   top:0.7em;
+ 
+  }
+ 
+  .plane{
+     position:sticky;
+     transform: rotate(90deg);
+     z-index: 1;
+     /* padding:10px; */
+     top:18px;
+     
+     
+  }
+  .addAnimation1{
+    width: 250px;
+ 
+    text-align: center;
+    background:linear-gradient(to right,blue 40%,black 100%);
+    color:#fff;
+    padding:10px;
+    
+    animation:addBorder 1.5s ease-in-out infinite alternate;
+  }
+  .addAnimation2{
+    width: 350px;
+    padding:10px;
+    text-align: center;
+    background:linear-gradient(to right,blue 40%,black 100%);
+    color:#fff;
+    animation:addBorder 1.5s ease-in-out infinite alternate;
+  }
+ 
+  @keyframes addBorder {
+    0% { transform: scale(1); border-radius: 0%; }
+    100% { transform: scale(1.1); border-radius: 50%; }
+ }
+ 
+ 
+ 
