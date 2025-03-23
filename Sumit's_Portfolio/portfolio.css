@@ -1,5 +1,5 @@
 .outerdiv {
-    background: url('/images/resume-mouse.jpg') no-repeat center;
+    background: url('../images/resume-mouse.jpg') no-repeat center;
     background-size: cover;
     position: relative;
     height: 301px; /* Ensure it fills the viewport */
@@ -81,7 +81,7 @@
  
  
   .my-photo{
-    background: url('/images/Cropped_myphoto1.jpg');
+    background: url('../images/Cropped_myphoto1.jpg');
     background-size: 90%;
     background-position: center;
     width:180px;
@@ -121,7 +121,7 @@
  
   .e-name::before{
      content:'';
-     background: url('/images/user.png');
+     background: url('../images/user.png');
      height:30px;
      width:30px;
      background-size: contain;
@@ -131,7 +131,7 @@
  
   .e-email::before{
      content:'';
-     background: url('/images/email.png');
+     background: url('../images/email.png');
      height:30px;
      width:30px;
      background-size: contain;
