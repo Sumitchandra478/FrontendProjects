@@ -1,247 +1,249 @@
 
 .outerdiv {
-    background: url('https://i.imgur.com/PeUgRRD.jpeg') no-repeat center;
-    background-size: cover;
-    position: relative;
-    height: 301px; /* Ensure it fills the viewport */
-    padding-top: 10px; /* Avoid negative margins */
-    padding-bottom:40px;
- }
- .outerdiv::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(52, 73, 94, 0.7); /* Darker overlay */
-    z-index: 1; /* Keep it behind the content */
+   background: url('https://i.imgur.com/PeUgRRD.jpeg') no-repeat center;
+   background-size: cover;
+   position: relative;
+   height: 330px; /* Ensure it fills the viewport */
+   padding-top: 10px; /* Avoid negative margins */
+   padding-bottom:40px;
+}
+.outerdiv::before {
+   content: '';
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(52, 73, 94, 0.7); /* Darker overlay */
+   z-index: 1; /* Keep it behind the content */
+}
+
+.testing1{
+   background-color: blue;
+   color:#333;
+}
+.container {
+   position: relative;
+   z-index: 2; /* Bring the content above the overlay */
+   color: white; /* Ensure text is readable */
+}
+ 
+ 
+.section{
+   padding:65px 0px;
+   
+}
+ 
+ 
+.section:nth-child(2n){
+   background: lightblue;
+}
+ 
+.nav{
+   /* border:5px solid black; */
+   margin-top:-70px;
+}
+
+.nav-link{
+   color:#fff;
+  font-size:xx-large;
+  margin-right: 1em;
+}
+
+.animating_arrow{
+  animation :arrow_down 1s ease-in-out infinite alternate
+}
+.welcome_heading{
+ margin-top: 3%;
+
+}
+
+@keyframes arrow_down{
+  0%{transform:translateY(7px)}
+  100%{transform:translateY(0px)}
+}
+.nav-link:hover{
+   color:#fff;
+   background: rgba(25, 37, 209, 0.3);
+   border-radius:20px 20px 20px 20px;
+}
+ 
+ .name{
+     color:rgba(255,255,255,1);
+     font-size: 35px;
+     letter-spacing: 0.3rem;
  }
  
- .testing1{
-    background-color: blue;
-    color:#333;
+ .name1{
+     font-size:13px;
+ 
  }
- .container {
-    position: relative;
-    z-index: 2; /* Bring the content above the overlay */
-    color: white; /* Ensure text is readable */
- }
-  
-  
- .section{
-    padding:60px 0px;
+ 
+ .social-icons li a i{
+    font-size: 25px;
+    color: #fff;
+    display: inline-block; /* Ensures transform & shadow work */
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    border-radius: 50%; /* Keeps it round */
     
  }
-  
-  
- .section:nth-child(2n){
-    background: lightblue;
- }
-  
- .nav{
-    /* border:5px solid black; */
-    margin-top:-70px;
+ 
+ .social-icons li a i:hover { /* Removed extra space before :hover */
+    box-shadow: 0px 0px 5px 3px red;
+    transform: scale(1.2);
  }
  
- .nav-link{
+ 
+  .my-photo{
+    background: url('https://i.imgur.com/mnGdutd.jpeg');
+    background-size: 90%;
+    background-position: center;
+    width:180px;
+    height:180px;
+   margin-top:-9.5rem;
+   box-shadow:0px 0px 5px 3px black;
+  
+ }
+ 
+  .heading{
+     font-size:35px;
+     color:#2857a4;
+     font-weight:bold;
+     letter-spacing: 0.2rem;
+ 
+  }
+ 
+  #Skills{
+     padding:130px 0px;
+     background: rgb(52, 73, 94,0.1);
+  }
+ 
+  .progress{
+     width:130px;
+     height:30px;
+     margin:20px;
+     border-radius:20px 20px 20px 20px;
+  }
+ .progress-bar p{
+     font-size:15px;
+     font-weight: bold;
+  }
+ 
+  .bottom-icons ul li a i{
+     color:#2857a4;
+  }
+ 
+  .e-name::before{
+     content:'';
+     background: url('https://i.imgur.com/vikNsTd.png');
+     height:30px;
+     width:30px;
+     background-size: contain;
+     position:absolute;
+ 
+  }
+ 
+  .e-email::before{
+     content:'';
+     background: url('https://i.imgur.com/eqfRyDR.png');
+     height:30px;
+     width:30px;
+     background-size: contain;
+     position:absolute;
+ 
+  }
+ 
+  #Education{
+     background:rgb(234, 236, 239);
+  }
+ 
+  .section-divider:nth-child(2n){
+     position:relative;
+     left:65%;
+ 
+  }
+ 
+  .timeline{
+     position:relative;
+    
+  }
+ 
+  .divider{
+     height:95%;
+     width:0px;
+     border:3px dashed grey;
+     position:absolute;
+     top:2%;
+    /* margin:auto; here margin doesnt work as position is set */
+    left:50%;
+     
+  }
+  .left-divider{
+   height:93%;
+   width:0px;
+   border:3px dashed grey;
+   position: absolute;
+   left:-1em;
+   top:0.7em;
+ 
+  }
+ 
+  .plane{
+     position:sticky;
+     transform: rotate(90deg);
+     z-index: 1;
+     /* padding:10px; */
+     top:18px;
+     
+     
+  }
+  .addAnimation1{
+    width: 250px;
+ 
+    text-align: center;
+    background:linear-gradient(to right,blue 40%,black 100%);
     color:#fff;
-   font-size:xx-large;
- }
-
- .animating_arrow{
-   animation :arrow_down 1s ease-in-out infinite alternate
- }
- .welcome_heading{
-  margin-top: 5%;
- 
- }
- 
- @keyframes arrow_down{
-   0%{transform:translateY(7px)}
-   100%{transform:translateY(0px)}
- }
- .nav-link:hover{
+    padding:10px;
+    
+    animation:addBorder 1.5s ease-in-out infinite alternate;
+  }
+  .addAnimation2{
+    width: 350px;
+    padding:10px;
+    text-align: center;
+    background:linear-gradient(to right,blue 40%,black 100%);
     color:#fff;
-    background: rgba(25, 37, 209, 0.3);
-    border-radius:20px 20px 20px 20px;
+    animation:addBorder 1.5s ease-in-out infinite alternate;
+  }
+ 
+  @keyframes addBorder {
+    0% { transform: scale(1); border-radius: 0%; }
+    100% { transform: scale(1.1); border-radius: 50%; }
  }
+ 
+ .styling_name{
+ 
+  font-weight: bold; /* Extra bold */
+  letter-spacing: 2px; /* Spaced out */
+  text-transform: uppercase; /* Make it all caps */
+  font-family: 'Poppins', sans-serif; /* Modern font */
   
-  .name{
-      color:rgba(255,255,255,1);
-      font-size: 35px;
-      letter-spacing: 0.3rem;
-  }
-  
-  .name1{
-      font-size:13px;
-  
-  }
-  
-  .social-icons li a i{
-     font-size: 25px;
-     color: #fff;
-     display: inline-block; /* Ensures transform & shadow work */
-     transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
-     border-radius: 50%; /* Keeps it round */
-     
-  }
-  
-  .social-icons li a i:hover { /* Removed extra space before :hover */
-     box-shadow: 0px 0px 5px 3px red;
-     transform: scale(1.2);
-  }
-  
-  
-   .my-photo{
-     background: url('https://i.imgur.com/mnGdutd.jpeg');
-     background-size: 90%;
-     background-position: center;
-     width:180px;
-     height:180px;
-    margin-top:-9.5rem;
-    box-shadow:0px 0px 5px 3px black;
-   
-  }
-  
-   .heading{
-      font-size:35px;
-      color:#2857a4;
-      font-weight:bold;
-      letter-spacing: 0.2rem;
-  
-   }
-  
-   #Skills{
-      padding:130px 0px;
-      background: rgb(52, 73, 94,0.1);
-   }
-  
-   .progress{
-      width:130px;
-      height:30px;
-      margin:20px;
-      border-radius:20px 20px 20px 20px;
-   }
-  .progress-bar p{
-      font-size:15px;
-      font-weight: bold;
-   }
-  
-   .bottom-icons ul li a i{
-      color:#2857a4;
-   }
-  
-   .e-name::before{
-      content:'';
-      background: url('https://i.imgur.com/vikNsTd.png');
-      height:30px;
-      width:30px;
-      background-size: contain;
-      position:absolute;
-  
-   }
-  
-   .e-email::before{
-      content:'';
-      background: url('https://i.imgur.com/eqfRyDR.png');
-      height:30px;
-      width:30px;
-      background-size: contain;
-      position:absolute;
-  
-   }
-  
-   #Education{
-      background:rgb(234, 236, 239);
-   }
-  
-   .section-divider:nth-child(2n){
-      position:relative;
-      left:65%;
-  
-   }
-  
-   .timeline{
-      position:relative;
-     
-   }
-  
-   .divider{
-      height:95%;
-      width:0px;
-      border:3px dashed grey;
-      position:absolute;
-      top:2%;
-     /* margin:auto; here margin doesnt work as position is set */
-     left:50%;
-      
-   }
-   .left-divider{
-    height:93%;
-    width:0px;
-    border:3px dashed grey;
-    position: absolute;
-    left:-1em;
-    top:0.7em;
-  
-   }
-  
-   .plane{
-      position:sticky;
-      transform: rotate(90deg);
-      z-index: 1;
-      /* padding:10px; */
-      top:18px;
-      
-      
-   }
-   .addAnimation1{
-     width: 250px;
-  
-     text-align: center;
-     background:linear-gradient(to right,blue 40%,black 100%);
-     color:#fff;
-     padding:10px;
-     
-     animation:addBorder 1.5s ease-in-out infinite alternate;
-   }
-   .addAnimation2{
-     width: 350px;
-     padding:10px;
-     text-align: center;
-     background:linear-gradient(to right,blue 40%,black 100%);
-     color:#fff;
-     animation:addBorder 1.5s ease-in-out infinite alternate;
-   }
-  
-   @keyframes addBorder {
-     0% { transform: scale(1); border-radius: 0%; }
-     100% { transform: scale(1.1); border-radius: 50%; }
-  }
-  
-  .styling_name{
-  
-   font-weight: bold; /* Extra bold */
-   letter-spacing: 2px; /* Spaced out */
-   text-transform: uppercase; /* Make it all caps */
-   font-family: 'Poppins', sans-serif; /* Modern font */
-   
-   /* Gradient Text Effect */
-   /* background: linear-gradient(to right,#fff,blue);
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent; */
-
-  
-   animation: fadeIn 1s ease-in-out infinite alternate;
-   
-  }
+  /* Gradient Text Effect */
+  /* background: linear-gradient(to right,#fff,blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+  margin-top: 0.8em;
 
  
+  animation: fadeIn 1s ease-in-out infinite alternate;
+  
+ }
 
-  @keyframes fadeIn {
-  0%{transform: scale(1);}
-  100%{transform: scale(0.8);}
+
+
+ @keyframes fadeIn {
+ 0%{transform: scale(1);}
+ 100%{transform: scale(0.8);}
 }
-  
-  
+ 
+ 
