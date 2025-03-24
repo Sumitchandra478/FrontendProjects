@@ -62,6 +62,7 @@ h1,h2,h3,p{
     height: 330px;
     text-align: center;
     position: absolute;
+ 
 } 
 .slide_out{
     animation:slide-out 1s ease-in-out forwards;
@@ -291,7 +292,7 @@ font-size:1.3em;
     border-radius:10px;
    
     box-shadow:2px 4px 6px 2px rgba(0,0,0,0.1);
-    background: #333;
+    background: linear-gradient(to bottom,black 60%,red 100%);
 }
 .comment h3{
     color:#fff;
@@ -301,7 +302,7 @@ font-size:1.3em;
 .comment p{
 font-weight:bold ;
 font-style: italic;
-    color:chocolate;
+    color:aqua;
 }
 /* Table */
 .my_table{
@@ -313,8 +314,10 @@ font-style: italic;
 .my_table h2{
     position:relative;
 }
+
 table{
     width:90%;
+    border-radius:40px;
 }
 .my_table h2::before{
     content:'';
@@ -323,25 +326,47 @@ table{
     width:13em;
     position: absolute;
     margin-top:1.5em;
-    
-  
-
 }
-table,thead,tr,th,td{
+thead,tr,th,td{
     text-align: center;
-    border:2px solid black;
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
+    border:2px solid white;
 }
 
 /* Last */
-.footer,#aboutUs{
+.footer{
     width:90%;
     margin:0 auto;
     text-align: center;
-    background: #333;
+    background: linear-gradient(to right,black 40%,blue 100%);
     color:#fff;
 }
 
+#aboutUs{
+    border-bottom-left-radius:40px;
+    border-bottom-right-radius:40px;
+    width:90%;
+    margin:0 auto;
+    text-align: center;
+    background: linear-gradient(to right,black 40%,blue 100%);
+    color:#fff;
+    margin-top:1em;
+}
+#contact{
+    width:90%;
+    margin:0 auto;
+    text-align: center;
+    background: linear-gradient(to right,black 40%,blue 100%);
+    color:#fff;
+    margin-top:1em;
+    margin-bottom: 1em;
+    animation:border-change 2s ease-in-out infinite alternate;
+}
+
+@keyframes border-change{
+    0%{border-radius: 100px;}
+    100%{border-radius: 20px;}
+}
 /* Media Queries for Responsiveness */
 
 @media (max-width:980px) and (min-width:769px){

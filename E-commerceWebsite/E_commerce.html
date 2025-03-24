@@ -23,9 +23,9 @@
         </div>
         <ul class="list-items">
           <li><a href="">Home</a></li>
-          <li><a href="">About Us</a></li>
-          <li><a href="">Shop By Category</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="#showbycategory">Shop By Category</a></li>
+          <li><a href="#aboutUs">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="http://127.0.0.1:5500/Projects/Clone%20website/login.html">Login</a></li>
           <li style="color: #fff; border: none; font-size: larger">
             <i class="fa-solid fa-cart-shopping"></i>
@@ -50,7 +50,7 @@
     </div>
 
     <div class="category2 ">
-      <div class="parent">
+      <div class="parent" id="showbycategory">
         <h2>Shop by Category</h2>
         <div class="grid">
           <div class="common electronics">
@@ -144,18 +144,22 @@
     </div>
     <div class="my_table">
       <h2>Product Features Comparison</h2>
-      <table>
-        <thead>
-          <tr style="background:orangered">
-            <th rowspan="2" style="border-bottom:none">Product </th>
-            <th rowspan="2" style="border-bottom:none">Price </th>
-            <th rowspan="2" style="border-bottom:none">Features </th>
-            <th  colspan="2" style="border-right:none ;text-align: center"; > Details </th>
+      <table style="background:linear-gradient(to right ,black 40%,black 100%);color:#fff;">
+        <thead style="background:linear-gradient(to right ,black 40%,black 100%);color:#fff;">
+          <tr style="background:linear-gradient(to right ,black 40%,black 100%);color:#fff;">
+            <th rowspan="2" >Product </th>
+            <th rowspan="2" >Price </th>
+            <th rowspan="2" >Features </th>
+            <th  colspan="2" style="text-align: center"; > Details </th>
           </tr>
-          <tr style="background:orangered">
+          <tr style="background:linear-gradient(to right ,black 40%,black 100%);color:#fff">
             <td>Size</td>
             <td>Weight</td>
           </tr>
+          <thead/>
+          <tBody>
+
+          
           <tr>
             <td>Product1</td>
             <td>$4.99</td>
@@ -177,16 +181,24 @@
             <td>Small</td>
             <td>0.5kg</td>
           </tr>
-        </thead>
+        </tBody>
       </table>
     </div>
 
     <div id="aboutUs">
-      <p>Welcome to [Your Store Name], your one-stop destination for high-quality products at unbeatable prices. 
+      <p class="mt-4">Welcome to Chandra Store, your one-stop destination for high-quality products at unbeatable prices. 
         We are committed to providing a seamless shopping experience with a wide range of curated items to suit your lifestyle.
         With secure payments,
         fast shipping, and top-notch customer support, we make online shopping easy and enjoyable.</p>
-        <p>Shop with confidence and discover something amazing today!</p>
+      
+        
+        <p style="letter-spacing: 0.2em;font-weight: bold;">Shop with confidence and discover something amazing today!</p>
+    </div>
+
+    <div id="contact">
+      <p style="font-family: cursive;font-weight: bold;">For any querry,Please reach out to us at below details:</p>
+      <span>Email:sumitchandra478@gmail.com ,</span> 
+      <span >Mobile No.: 8112206447</span>
     </div>
 
     <footer class="footer">
