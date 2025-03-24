@@ -220,5 +220,13 @@
      100% { transform: scale(1.1); border-radius: 50%; }
   }
   
+  .zooming{
+   animation:zoom 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes zoom{
+   0%{transform: scale(1.1);}
+   100%{transform: scale(1);}
+  }
   
   
