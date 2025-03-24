@@ -221,8 +221,8 @@
   }
   
   .styling_name{
-   font-size: 2.5rem; /* Bigger for prominence */
-   font-weight: bolder; /* Extra bold */
+  
+   font-weight: bold; /* Extra bold */
    letter-spacing: 2px; /* Spaced out */
    text-transform: uppercase; /* Make it all caps */
    font-family: 'Poppins', sans-serif; /* Modern font */
