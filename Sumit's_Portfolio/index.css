@@ -220,7 +220,7 @@
      100% { transform: scale(1.1); border-radius: 50%; }
   }
   
-  .zooming{
+  .styling_name{
    font-size: 2.5rem; /* Bigger for prominence */
    font-weight: bolder; /* Extra bold */
    letter-spacing: 2px; /* Spaced out */
