@@ -3,7 +3,7 @@
    background: url('https://i.imgur.com/PeUgRRD.jpeg') no-repeat center;
    background-size: cover;
    position: relative;
-   height: 301px; /* Ensure it fills the viewport */
+   height: 330px; /* Ensure it fills the viewport */
    padding-top: 10px; /* Avoid negative margins */
    padding-bottom:40px;
 }
@@ -30,7 +30,7 @@
  
  
 .section{
-   padding:60px 0px;
+   padding:65px 0px;
    
 }
  
@@ -47,13 +47,14 @@
 .nav-link{
    color:#fff;
   font-size:xx-large;
+  margin-right: 1em;
 }
 
 .animating_arrow{
   animation :arrow_down 1s ease-in-out infinite alternate
 }
 .welcome_heading{
- margin-top: 5%;
+ margin-top: 3%;
 
 }
 
@@ -231,6 +232,7 @@
   /* background: linear-gradient(to right,#fff,blue);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; */
+  margin-top: 0.8em;
 
  
   animation: fadeIn 1s ease-in-out infinite alternate;
