@@ -1,0 +1,24 @@
+{
+  "name": "frontendprojects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^5.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sumitchandra478/FrontendProjects.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sumitchandra478/FrontendProjects/issues"
+  },
+  "homepage": "https://github.com/Sumitchandra478/FrontendProjects#readme"
+}
