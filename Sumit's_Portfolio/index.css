@@ -228,7 +228,7 @@
    font-family: 'Poppins', sans-serif; /* Modern font */
    
    /* Gradient Text Effect */
-   background: linear-gradient(to right,black,red);
+   background: linear-gradient(to right,#fff,red);
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
 
