@@ -134,7 +134,7 @@
   
    .e-name::before{
       content:'';
-      background: url('../images/user.png');
+      background: url('https://i.imgur.com/vikNsTd.png');
       height:30px;
       width:30px;
       background-size: contain;
@@ -144,7 +144,7 @@
   
    .e-email::before{
       content:'';
-      background: url('../images/email.png');
+      background: url('https://i.imgur.com/eqfRyDR.png');
       height:30px;
       width:30px;
       background-size: contain;
