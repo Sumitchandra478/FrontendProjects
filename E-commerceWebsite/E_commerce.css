@@ -334,7 +334,7 @@ table,thead,tr,th,td{
 }
 
 /* Last */
-.footer{
+.footer,#aboutUs{
     width:90%;
     margin:0 auto;
     text-align: center;
